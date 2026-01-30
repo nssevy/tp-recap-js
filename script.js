@@ -7,12 +7,6 @@ function ajouterDepense() {
   const description = document.getElementById("description").value;
   const montant = document.getElementById("montant").value;
 
-  // On vérifie que les champs ne sont pas vides
-  if (description === "" || montant === "") {
-    alert("Veuillez remplir tous les champs");
-    return;
-  }
-
   // On vérifie que le montant est un nombre valide
   if (isNaN(montant) || montant <= 0) {
     alert("Veuillez entrer un montant valide");
