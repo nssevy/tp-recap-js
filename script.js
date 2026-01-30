@@ -23,7 +23,7 @@ function ajouterDepense() {
   nouvelleLigne.innerHTML = `
             <td>${description}</td>
             <td>${parseFloat(montant).toFixed(2)} €</td>
-            <td><button class="btn-supprimer">Supprimer</button></td>`;
+            <td><button type="button" id="btn-supprimer">supprimer</button></td>`;
 
   // On ajoute la ligne crée dans le formulaire dans le tableau
   listeDepenses.appendChild(nouvelleLigne);
@@ -58,7 +58,28 @@ function calculerTotal() {
 
   // Le total
   document.getElementById("montantTotal").textContent = total.toFixed(2);
-}
+};
 
 // On appelle la fonction ajouterDepense
 document.getElementById("btnAjouter").addEventListener("click", ajouterDepense);
+
+function supprimer () { 
+
+const buttons = document.getElementById("btn-supprimer"); //recherche de tout les bouttons "supprimer"
+console.log(buttons);
+
+buttons.forEach(btn => {
+ btn.addEventListener("click", function() {
+//récupérer la ligne
+    const row = btn.parentElement.parentElement;
+//supprimer la ligne
+row.remove();
+
+//total mise à jour 
+calculerTotal();
+
+  });
+    })
+} 
+
+document.getElementById("btn-supprimer").addEventListener("click", supprimer);
