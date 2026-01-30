@@ -7,32 +7,35 @@
     <script src="script.js" defer ></script>
 </head>
 <body>
-    <main>
-        <!--On commence par crée le formulaire d'ajout en ajoutant un id pour chaque balise afin de pouvoir travailler avec JS par la suite-->
-        <div id="formAjout">
-                <label for="description">Description de la dépense</label>
-                <input type="text" id="description" name="description" placeholder="Ex: Courses" required>
-                <label for="montant">Montant</label>
-                <input type="number" id="montant" name="montant" placeholder="0.00" required>
-            <button id="ajout" type="submit" name="ajout">Ajouter la dépense</button>
-        </div>
 
-        <table>
-            <thead>
-              <tr>
-                <th>Description</th>
-                <th>Montant</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-
-            <tbody id="tableauDepenses">
-              <!-- Les lignes seront ajoutées ici -->
-            </tbody>
-          </table>
-          
-          <div id="total">Total : 0.00 €</div>
-
-    </main>
+  <h1>Gestionnaire de dépenses</h1>
+    
+  <!-- Formulaire d'ajout -->
+  <div id="formulaire">
+      <input type="text" id="description" placeholder="Description de la dépense">
+      <input type="number" id="montant" placeholder="Montant" step="0.01">
+      <button type="button" id="btnAjouter">Ajouter</button>
+  </div>
+  
+  <!-- Tableau des dépenses -->
+  <table id="tableauDepenses">
+      <thead>
+          <tr>
+              <th>Description</th>
+              <th>Montant</th>
+              <th>Action</th>
+          </tr>
+      </thead>
+      <tbody id="listeDepenses">
+          <!-- Les lignes ajoutées par JavaScript -->
+      </tbody>
+  </table>
+  
+  <!-- Le total -->
+  <div id="total">
+      <p>Total : <span id="montantTotal">0.00</span> €</p>
+  </div>
+  
+  <script src="script.js"></script>
 </body>
 </html>
