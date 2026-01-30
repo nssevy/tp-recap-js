@@ -9,13 +9,30 @@
 <body>
     <main>
         <!--On commence par crée le formulaire d'ajout en ajoutant un id pour chaque balise afin de pouvoir travailler avec JS par la suite-->
-        <form id="formAjout">
+        <div id="formAjout">
                 <label for="description">Description de la dépense</label>
                 <input type="text" id="description" name="description" placeholder="Ex: Courses" required>
                 <label for="montant">Montant</label>
                 <input type="number" id="montant" name="montant" placeholder="0.00" required>
             <button id="ajout" type="submit" name="ajout">Ajouter la dépense</button>
-        </form>
+        </div>
+
+        <table>
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th>Montant</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="tableauDepenses">
+              <!-- Les lignes seront ajoutées ici -->
+            </tbody>
+          </table>
+          
+          <div id="total">Total : 0.00 €</div>
+
     </main>
 </body>
 </html>
